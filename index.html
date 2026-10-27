@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interclasses de Futsal</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- "defer" faz o JS esperar o HTML carregar antes de rodar -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Interclasses de futsal</h1>
+        <p>Classificação, jogos e artilheiros</p>
+    </header>
+
+    <div class="layout">
+
+        <!-- Menu lateral: cada botão rola até uma seção -->
+        <aside class="menu">
+            <button onclick="irPara('proximo')">Próximo jogo</button>
+            <button onclick="irPara('classificacao')">Classificação</button>
+            <button onclick="irPara('jogos')">Jogos</button>
+            <button onclick="irPara('artilheiros')">Artilheiros</button>
+            <button onclick="irPara('registrar')">Registrar resultado</button>
+        </aside>
+
+        <main>
+
+            <!-- Próximo jogo + números -->
+            <section class="top-grid">
+
+                <div id="proximo" class="proximo-jogo">
+                    <h2>Próximo jogo</h2>
+
+                    <div class="times">
+                        <span id="timeCasa"></span>
+                        <strong>×</strong>
+                        <span id="timeFora"></span>
+                    </div>
+
+                    <p id="dataJogo"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Em números</h2>
+
+                    <div class="numeros">
+                        <div>
+                            <strong id="numeroJogos">0</strong>
+                            <span>jogos</span>
+                        </div>
+
+                        <div>
+                            <strong id="numeroGols">0</strong>
+                            <span>gols</span>
+                        </div>
+
+                        <div>
+                            <strong id="mediaGols">0</strong>
+                            <span>média</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Classificação -->
+            <section id="classificacao" class="card">
+
+                <h2>Classificação</h2>
+
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Turma</th>
+                                <th>P</th>
+                                <th>J</th>
+                                <th>V</th>
+                                <th>E</th>
+                                <th>D</th>
+                                <th>SG</th>
+                            </tr>
+                        </thead>
+
+                        <!-- id diferente do da seção (cada id deve ser único) -->
+                        <tbody id="tabelaClassificacao"></tbody>
+                    </table>
+                </div>
+
+                <small>
+                    P: pontos · J: jogos · V: vitórias · E: empates · D: derrotas · SG: saldo de gols
+                </small>
+
+            </section>
+
+
+            <!-- Jogos + artilheiros -->
+            <section class="bottom-grid">
+
+                <div id="jogos" class="card">
+                    <h2>Jogos</h2>
+                    <div id="listaJogos"></div>
+                </div>
+
+                <div id="artilheiros" class="card">
+                    <h2>Artilheiros</h2>
+                    <div id="listaArtilheiros"></div>
+                </div>
+
+            </section>
+
+
+            <!-- Formulário para registrar resultado -->
+            <section id="registrar" class="card">
+
+                <h2>Registrar resultado</h2>
+
+                <div id="mensagem"></div>
+
+                <label for="selecaoJogo">Jogo</label>
+                <select id="selecaoJogo"></select>
+
+                <div class="placar">
+
+                    <div>
+                        <label for="golsCasa" id="labelCasa">Gols da casa</label>
+                        <input id="golsCasa" type="number" min="0" value="0">
+                    </div>
+
+                    <div>
+                        <label for="golsFora" id="labelFora">Gols do visitante</label>
+                        <input id="golsFora" type="number" min="0" value="0">
+                    </div>
+
+                </div>
+
+                <button id="botaoRegistrar" class="registrar" onclick="registrarResultado()">
+                    Registrar
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        Interclasses de Futsal
+    </footer>
+
+</div>
+
+</body>
+</html>

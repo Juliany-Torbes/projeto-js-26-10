@@ -1,0 +1,356 @@
+/* Cores do site: mudou aqui, muda em todo o site */
+:root {
+    --rosa-escuro: #d40075;
+    --rosa: #fd378a;
+    --rosa-claro: #fde4f0;
+    --fundo: #eef1f5;
+    --texto: #263238;
+    --cinza: #68747d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+.container {
+    width: 94%;
+    max-width: 1250px;
+    margin: 25px auto;
+}
+
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    background: var(--rosa-escuro);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: var(--rosa-claro);
+}
+
+
+/* ---------- Layout geral ---------- */
+
+.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 18px;
+}
+
+
+/* ---------- Menu ---------- */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu button {
+    border: 0;
+    background: white;
+    color: var(--rosa-escuro);
+    padding: 14px;
+    border-radius: 25px;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background: var(--rosa-claro);
+}
+
+
+/* ---------- Cards ---------- */
+
+.card,
+.proximo-jogo {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .05);
+    margin-bottom: 18px;
+}
+
+.card h2,
+.proximo-jogo h2 {
+    color: var(--rosa-escuro);
+    margin-bottom: 18px;
+}
+
+/* Dentro dos grids o espaço já vem do "gap", então tiramos a margem */
+.top-grid > *,
+.bottom-grid > * {
+    margin-bottom: 0;
+}
+
+.top-grid {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+
+/* ---------- Próximo jogo ---------- */
+
+.proximo-jogo {
+    background: var(--rosa);
+    color: white;
+    min-height: 170px;
+    text-align: center;
+}
+
+.proximo-jogo h2 {
+    color: white;
+}
+
+.times {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 45px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.times strong {
+    color: #ffd43b;
+}
+
+.proximo-jogo p {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* ---------- Em números ---------- */
+
+.numeros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.numeros div {
+    background: #f1f4f8;
+    border-radius: 10px;
+    text-align: center;
+    padding: 18px 5px;
+}
+
+.numeros strong {
+    display: block;
+    color: var(--rosa-escuro);
+    font-size: 26px;
+}
+
+.numeros span {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+
+/* ---------- Tabela ---------- */
+
+.tabela-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--cinza);
+    text-align: left;
+    font-size: 13px;
+    padding: 12px 10px;
+}
+
+td {
+    padding: 13px 10px;
+    border-top: 1px solid #e5e8eb;
+}
+
+/* destaca o líder */
+tbody tr:first-child {
+    background: #fff4ca;
+    font-weight: bold;
+}
+
+.card small {
+    display: block;
+    margin-top: 12px;
+    color: #7b858d;
+}
+
+
+/* ---------- Lista de jogos ---------- */
+
+.jogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 5px;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.data {
+    color: var(--cinza);
+    font-weight: bold;
+    width: 70px;
+}
+
+.resultado {
+    color: #2f8f46;
+    font-weight: bold;
+}
+
+
+/* ---------- Artilheiros ---------- */
+
+.artilheiro {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.artilheiro small {
+    margin: 3px 0 0;
+}
+
+.gols {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--rosa-escuro);
+}
+
+
+/* ---------- Formulário ---------- */
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dbe0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.placar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.registrar {
+    width: 100%;
+    border: 0;
+    background: var(--rosa);
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registrar:hover {
+    background: var(--rosa-escuro);
+}
+
+/* botão desativado quando não há jogos pendentes */
+.registrar:disabled {
+    background: #c9ced3;
+    cursor: not-allowed;
+}
+
+#mensagem {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #7b858d;
+}
+
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 900px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 96%;
+        margin: 12px auto;
+    }
+
+    .times {
+        gap: 20px;
+        font-size: 20px;
+    }
+
+    th,
+    td {
+        font-size: 12px;
+        padding: 9px 6px;
+    }
+}
